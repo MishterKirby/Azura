@@ -129,5 +129,17 @@ namespace Azura.Spotify
             Console.WriteLine(newUri);
             await spotify.Player.AddToQueue(new PlayerAddToQueueRequest(newUri));
         }
+        
+        public static async Task Queue(string songName, string artistName)
+        {
+            var search = await spotify.Search.Item(new SearchRequest(SearchRequest.Types.Track, $"{songName} {artistName}"));
+            var track = search.Tracks.Items.FirstOrDefault();
+            if (track == null)
+            {
+                Console.WriteLine("No track found");
+                return;
+            }
+            await spotify.Player.AddToQueue(new PlayerAddToQueueRequest(track.Uri));
+        }
     }
 }

@@ -109,7 +109,15 @@ namespace Azura.Twitch
 
         private async Task SongRequest(OnChatCommandReceivedArgs e)
         {
-            await SpotifyControl.Queue(e.Command.ArgumentsAsString);
+            if (e.Command.ArgumentsAsString.Contains('-'))
+            {
+                string[] a = e.Command.ArgumentsAsString.Split('-');
+                client.SendMessage(twitchChannel, a[0] + a[1]);
+            }
+            else if (e.Command.ArgumentsAsString.Contains(':'))
+            { 
+                await SpotifyControl.Queue(e.Command.ArgumentsAsString); 
+            }
             client.SendMessage(twitchChannel, "Added song to queue successfully!");
         }
 

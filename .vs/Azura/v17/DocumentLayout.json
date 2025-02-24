@@ -3,16 +3,8 @@
   "WorkspaceRootPath": "F:\\Projects\\Azura\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6B4F61E9-E113-4DFA-BB2C-A59C566E6592}|Azura.csproj|f:\\projects\\azura\\spotifycontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B4F61E9-E113-4DFA-BB2C-A59C566E6592}|Azura.csproj|solutionrelative:spotifycontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B4F61E9-E113-4DFA-BB2C-A59C566E6592}|Azura.csproj|f:\\projects\\azura\\twitchbot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B4F61E9-E113-4DFA-BB2C-A59C566E6592}|Azura.csproj|solutionrelative:twitchbot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6B4F61E9-E113-4DFA-BB2C-A59C566E6592}|Azura.csproj|f:\\projects\\azura\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B4F61E9-E113-4DFA-BB2C-A59C566E6592}|Azura.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B4F61E9-E113-4DFA-BB2C-A59C566E6592}|Azura.csproj|f:\\projects\\azura\\azura.twitch\\twitchbot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B4F61E9-E113-4DFA-BB2C-A59C566E6592}|Azura.csproj|solutionrelative:azura.twitch\\twitchbot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,22 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SpotifyControl.cs",
-              "DocumentMoniker": "F:\\Projects\\Azura\\SpotifyControl.cs",
-              "RelativeDocumentMoniker": "SpotifyControl.cs",
-              "ToolTip": "F:\\Projects\\Azura\\SpotifyControl.cs",
-              "RelativeToolTip": "SpotifyControl.cs",
-              "ViewState": "AgIAAGAAAAAAAAAAAAAEwHsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-17T18:39:48.613Z",
-              "IsPinned": true,
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
@@ -56,28 +34,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "TwitchBot.cs",
-              "DocumentMoniker": "F:\\Projects\\Azura\\TwitchBot.cs",
-              "RelativeDocumentMoniker": "TwitchBot.cs",
-              "ToolTip": "F:\\Projects\\Azura\\TwitchBot.cs",
-              "RelativeToolTip": "TwitchBot.cs",
-              "ViewState": "AgIAAFgAAAAAAAAAAAAEwG8AAABEAAAAAAAAAA==",
+              "DocumentMoniker": "F:\\Projects\\Azura\\Azura.Twitch\\TwitchBot.cs",
+              "RelativeDocumentMoniker": "Azura.Twitch\\TwitchBot.cs",
+              "ToolTip": "F:\\Projects\\Azura\\Azura.Twitch\\TwitchBot.cs",
+              "RelativeToolTip": "Azura.Twitch\\TwitchBot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-19T20:11:04.832Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Program.cs",
-              "DocumentMoniker": "F:\\Projects\\Azura\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "F:\\Projects\\Azura\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-16T23:29:32.286Z",
+              "WhenOpened": "2025-02-24T22:40:58.313Z",
               "EditorCaption": ""
             }
           ]
