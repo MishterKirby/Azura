@@ -9,6 +9,10 @@ using TwitchLib.Communication.Clients;
 using System.ComponentModel;
 using Azura.Spotify;
 using System.Runtime.CompilerServices;
+using EmbedIO;
+using Azura.Auth;
+using TwitchLib.Api;
+using SpotifyAPI.Web;
 
 namespace Azura.Twitch
 { 
@@ -16,15 +20,53 @@ namespace Azura.Twitch
     {
         // Fun stuff goes here
 
-        
+        string twitchKey;
 
-        string twitchID = File.ReadLines(Path.Combine(Directory.GetCurrentDirectory(), "twitchkey.txt")).First();
-        string twitchKey = File.ReadLines(Path.Combine(Directory.GetCurrentDirectory(), "twitchkey.txt")).Last();
-        string twitchChannel = File.ReadLines(Path.Combine(Directory.GetCurrentDirectory(), "twitchkey.txt")).ElementAt(1);
-
+        private static List<string> scopes = new List<string> { "chat:read", "whispers:read", "whispers:edit", "chat:edit", "channel:moderate" };
 
         TwitchClient client;
-        
+
+        public async Task Authenticate()
+        { 
+            validate();
+            Console.WriteLine($"Please authorize here:\n{AuthorizationCodeUrl(TwitchAuth.TwitchAppID, TwitchAuth.TwitchRedirectUri, scopes)}");
+            var server = new TwitchWebServer(TwitchAuth.TwitchRedirectUri);
+
+            var api = new TwitchAPI();
+            var auth = await server.Listen();
+            var resp = await api.Auth.GetAccessTokenFromCodeAsync(auth.Code, TwitchAuth.TwitchClientSecret, TwitchAuth.TwitchRedirectUri, TwitchAuth.TwitchAppID);
+            
+            twitchKey = resp.AccessToken;
+
+        }
+
+        private static string AuthorizationCodeUrl(string clientId, string redirectUri, List<string> scopes)
+        {
+            var scopesStr = String.Join('+', scopes);
+
+            return "https://id.twitch.tv/oauth2/authorize?" +
+                   $"client_id={clientId}&" +
+                   $"redirect_uri={System.Web.HttpUtility.UrlEncode(redirectUri)}&" +
+                   "response_type=code&" +
+                   $"scope={scopesStr}";
+        }
+
+        static void validate()
+        {
+            if (String.IsNullOrEmpty(TwitchAuth.TwitchAppID))
+            {
+                throw new ArgumentNullException("TwitchAppID is null or empty");
+            }
+            if (String.IsNullOrEmpty(TwitchAuth.TwitchClientSecret))
+            {
+                throw new ArgumentNullException("TwitchClientSecret is null or empty");
+            }
+            if (String.IsNullOrEmpty(TwitchAuth.TwitchRedirectUri))
+            {
+                throw new ArgumentNullException("TwitchRedirectUri is null or empty");
+            }
+
+        }
 
         public TwitchBot()
         {
@@ -32,7 +74,10 @@ namespace Azura.Twitch
             //TODO: PLEASE for the love of god, don't hardcode this
             //This is just for testing purposes
 
-            ConnectionCredentials creds = new(twitchID, twitchKey);
+
+            Authenticate().GetAwaiter().GetResult();
+
+            ConnectionCredentials creds = new(TwitchAuth.chatUsername, twitchKey);
             var clientOptions = new ClientOptions
             {
                 MessagesAllowedInPeriod = 750,
@@ -42,7 +87,7 @@ namespace Azura.Twitch
             //Get a websocket going for communication with Twitch's Helix API
             WebSocketClient wClient = new WebSocketClient(clientOptions);
             client = new TwitchClient(wClient);
-            client.Initialize(creds, twitchChannel, '!', '!', true);
+            client.Initialize(creds, TwitchAuth.streamerChannel, '!', '!', true);
             
             //Functions to define what the bot should do for the following events
             client.OnLog += Client_OnLog;
@@ -54,7 +99,6 @@ namespace Azura.Twitch
 
             //...and finally, we connect
             client.Connect();
-            Console.WriteLine($"twitchChannel is {twitchChannel}");
 
         }
 
@@ -64,7 +108,7 @@ namespace Azura.Twitch
             switch (e.Command.CommandText)
             {
                 case "song":
-                    client.SendMessage(twitchChannel, $"{SpotifyControl.songName} - {SpotifyControl.artistName}");
+                    client.SendMessage(TwitchAuth.streamerChannel, $"{SpotifyControl.songName} - {SpotifyControl.artistName}");
                     break;
                 case "skip" when e.Command.ChatMessage.IsModerator:
                 case "skip" when e.Command.ChatMessage.IsBroadcaster:
@@ -85,7 +129,7 @@ namespace Azura.Twitch
         {
             //Logs the connection to stdout
             //TODO: Log to file and make it all fancy~
-            File.WriteAllText("log.log", $"Connected as {e.BotUsername} to {twitchChannel}");
+            File.WriteAllText("log.log", $"Connected as {e.BotUsername} to {TwitchAuth.streamerChannel}");
         }
 
         private void Client_OnMessageReceived(object? sender, OnMessageReceivedArgs e)
@@ -112,20 +156,20 @@ namespace Azura.Twitch
             if (e.Command.ArgumentsAsString.Contains('-'))
             {
                 string[] a = e.Command.ArgumentsAsString.Split('-');
-                client.SendMessage(twitchChannel, a[0] + a[1]);
+                client.SendMessage(TwitchAuth.streamerChannel, a[0] + a[1]);
             }
             else if (e.Command.ArgumentsAsString.Contains(':'))
             { 
                 await SpotifyControl.Queue(e.Command.ArgumentsAsString); 
             }
-            client.SendMessage(twitchChannel, "Added song to queue successfully!");
+            client.SendMessage(TwitchAuth.streamerChannel, "Added song to queue successfully!");
         }
 
         private void Shoutout(List<string> e)
         {
             foreach(string i in e)
             {
-                client.SendMessage(twitchChannel, $"Check out the lovely {i} over at https://twitch.tv/{i}!");
+                client.SendMessage(TwitchAuth.streamerChannel, $"Check out the lovely {i} over at https://twitch.tv/{i}!");
             }
         }
     }

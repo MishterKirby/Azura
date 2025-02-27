@@ -8,20 +8,16 @@ namespace Azura
         {
             Twitch();
             Spotify();
-            Console.ReadLine();
         }
 
         private static void Twitch()
         {
-            Console.WriteLine("Starting Twitch engine...");
             TwitchBot twitchBot = new TwitchBot();
         }
 
         private static void Spotify()
         {
-            Console.WriteLine("Starting Spotify engine...");
             SpotifyControl spotifyControl = new SpotifyControl();
-            
         }
     }
 }

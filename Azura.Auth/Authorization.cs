@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Azura.Azura.Auth
+namespace Azura.Auth.Models
 {
     public class Authorization
     {

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Azura")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+57c42cd2fb0cc54f174f3577d538c7ce8c3fe113")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f2dfb27849460e01f4461e8130c7a8707c505048")]
 [assembly: System.Reflection.AssemblyProductAttribute("Azura")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Azura")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

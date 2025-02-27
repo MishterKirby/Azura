@@ -5,6 +5,22 @@
     {
       "AbsoluteMoniker": "D:0:0:{6B4F61E9-E113-4DFA-BB2C-A59C566E6592}|Azura.csproj|f:\\projects\\azura\\azura.twitch\\twitchbot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6B4F61E9-E113-4DFA-BB2C-A59C566E6592}|Azura.csproj|solutionrelative:azura.twitch\\twitchbot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B4F61E9-E113-4DFA-BB2C-A59C566E6592}|Azura.csproj|f:\\projects\\azura\\azura.twitch\\twitchauth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B4F61E9-E113-4DFA-BB2C-A59C566E6592}|Azura.csproj|solutionrelative:azura.twitch\\twitchauth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B4F61E9-E113-4DFA-BB2C-A59C566E6592}|Azura.csproj|f:\\projects\\azura\\azura.auth\\authorization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B4F61E9-E113-4DFA-BB2C-A59C566E6592}|Azura.csproj|solutionrelative:azura.auth\\authorization.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B4F61E9-E113-4DFA-BB2C-A59C566E6592}|Azura.csproj|f:\\projects\\azura\\azura\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B4F61E9-E113-4DFA-BB2C-A59C566E6592}|Azura.csproj|solutionrelative:azura\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6B4F61E9-E113-4DFA-BB2C-A59C566E6592}|Azura.csproj|f:\\projects\\azura\\azura.auth\\twitchwebserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B4F61E9-E113-4DFA-BB2C-A59C566E6592}|Azura.csproj|solutionrelative:azura.auth\\twitchwebserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,7 +30,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,13 +50,65 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Authorization.cs",
+              "DocumentMoniker": "F:\\Projects\\Azura\\Azura.Auth\\Authorization.cs",
+              "RelativeDocumentMoniker": "Azura.Auth\\Authorization.cs",
+              "ToolTip": "F:\\Projects\\Azura\\Azura.Auth\\Authorization.cs",
+              "RelativeToolTip": "Azura.Auth\\Authorization.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T23:46:22.491Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "F:\\Projects\\Azura\\Azura\\Program.cs",
+              "RelativeDocumentMoniker": "Azura\\Program.cs",
+              "ToolTip": "F:\\Projects\\Azura\\Azura\\Program.cs",
+              "RelativeToolTip": "Azura\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-27T05:51:07.934Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TwitchWebServer.cs",
+              "DocumentMoniker": "F:\\Projects\\Azura\\Azura.Auth\\TwitchWebServer.cs",
+              "RelativeDocumentMoniker": "Azura.Auth\\TwitchWebServer.cs",
+              "ToolTip": "F:\\Projects\\Azura\\Azura.Auth\\TwitchWebServer.cs",
+              "RelativeToolTip": "Azura.Auth\\TwitchWebServer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T23:44:43.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TwitchAuth.cs",
+              "DocumentMoniker": "F:\\Projects\\Azura\\Azura.Twitch\\TwitchAuth.cs",
+              "RelativeDocumentMoniker": "Azura.Twitch\\TwitchAuth.cs",
+              "ToolTip": "F:\\Projects\\Azura\\Azura.Twitch\\TwitchAuth.cs",
+              "RelativeToolTip": "Azura.Twitch\\TwitchAuth.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-26T23:18:12.699Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "TwitchBot.cs",
               "DocumentMoniker": "F:\\Projects\\Azura\\Azura.Twitch\\TwitchBot.cs",
               "RelativeDocumentMoniker": "Azura.Twitch\\TwitchBot.cs",
               "ToolTip": "F:\\Projects\\Azura\\Azura.Twitch\\TwitchBot.cs",
               "RelativeToolTip": "Azura.Twitch\\TwitchBot.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAGoAAAAAAAAAAAAUwGQAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-24T22:40:58.313Z",
               "EditorCaption": ""
