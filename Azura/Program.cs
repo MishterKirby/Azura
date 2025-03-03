@@ -1,5 +1,6 @@
 ﻿using Azura.Spotify;
 using Azura.Twitch;
+
 namespace Azura
 {
     class MainProgram
@@ -8,6 +9,7 @@ namespace Azura
         {
             Twitch();
             Spotify();
+            Console.ReadKey();
         }
 
         private static void Twitch()

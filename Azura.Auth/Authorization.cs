@@ -6,13 +6,8 @@ using System.Threading.Tasks;
 
 namespace Azura.Auth.Models
 {
-    public class Authorization
+    public class Authorization(string code)
     {
-        public string Code { get; }
-
-        public Authorization(string code)
-        {
-            Code = code;
-        }
+        public string Code { get; } = code;
     }
 }

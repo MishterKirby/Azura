@@ -29,7 +29,8 @@ namespace Azura.Twitch
         public async Task Authenticate()
         { 
             validate();
-            Console.WriteLine($"Please authorize here:\n{AuthorizationCodeUrl(TwitchAuth.TwitchAppID, TwitchAuth.TwitchRedirectUri, scopes)}");
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo(AuthorizationCodeUrl(TwitchAuth.TwitchAppID, TwitchAuth.TwitchRedirectUri, scopes)) { UseShellExecute = true });
+            //Console.WriteLine($"Please authorize here:\n{AuthorizationCodeUrl(TwitchAuth.TwitchAppID, TwitchAuth.TwitchRedirectUri, scopes)}");
             var server = new TwitchWebServer(TwitchAuth.TwitchRedirectUri);
 
             var api = new TwitchAPI();
@@ -156,7 +157,7 @@ namespace Azura.Twitch
             if (e.Command.ArgumentsAsString.Contains('-'))
             {
                 string[] a = e.Command.ArgumentsAsString.Split('-');
-                client.SendMessage(TwitchAuth.streamerChannel, a[0] + a[1]);
+                await SpotifyControl.Queue(a[0], a[1]); 
             }
             else if (e.Command.ArgumentsAsString.Contains(':'))
             { 

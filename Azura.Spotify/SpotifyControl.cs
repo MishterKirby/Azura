@@ -11,7 +11,7 @@ namespace Azura.Spotify
     {
         //initializations for Spotify to authenticate properly
         private const string CredentialsPath = "credentials.json";
-        private static readonly string? clientId = "382ae32290d1431883f8825bc43a3ed1";
+        private static readonly string? clientId = SpotifyAuth.ClientID;
         private static readonly EmbedIOAuthServer _server = new(new Uri("http://localhost:8888/callback"), 8888);
         private static SpotifyClient spotify;
 
